@@ -4,10 +4,12 @@ package com.pam.pigskin.proxy;
 import com.pam.pigskin.Pigskin;
 import com.pam.pigskin.Reference;
 import com.pam.pigskin.entity.EntityFootball;
+import com.pam.pigskin.entity.RenderFootball;
 import com.pam.pigskin.items.ItemRegistry;
 import com.pam.pigskin.items.ItemRenderRegister;
 import com.pam.weeeflowers.blocks.ItemModels;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -32,6 +34,7 @@ public class ClientProxy extends CommonProxy {
         super.init(e);
 		ItemModels.init();
 		ItemRenderRegister.registerItemRenderer();
+		RenderingRegistry.registerEntityRenderingHandler(EntityFootball.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), ItemRegistry.footballItem, Minecraft.getMinecraft().getRenderItem()));
     }
 
     @Override

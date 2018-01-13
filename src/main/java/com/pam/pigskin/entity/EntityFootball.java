@@ -33,7 +33,7 @@ public class EntityFootball extends EntityThrowable
 
     public static void registerFixesSnowball(DataFixer fixer)
     {
-        EntityThrowable.registerFixesThrowable(fixer, "footballitem");
+        EntityThrowable.registerFixesThrowable(fixer, "football");
     }
 
     /**
